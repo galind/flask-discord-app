@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, render_template
 from flask_discord import (
     DiscordOAuth2Session, Unauthorized, requires_authorization
 )
@@ -23,7 +23,8 @@ def redirect_unauthorized(e):
 @app.route('/')
 @requires_authorization
 def home():
-    return 'You are authorized'
+    user = discord.fetch_user()
+    return render_template('index.html', user=user)
 
 
 @app.route('/login')
