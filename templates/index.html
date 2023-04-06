@@ -3,12 +3,19 @@
   <head>
     <meta charset="UTF-8">
     <title>Home - Bitacora</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   </head>
   <body>
-    {% for guild in guilds %}
-      {% if guild.permissions.administrator == True %}
-        <div>{{ guild.name }}</div>
-      {% endif %}
-    {% endfor %}
+    <div class="container">
+      {% for guild in guilds %}
+        {% if guild.permissions.administrator == True %}
+          <div class="item">
+            <img class="icon" src="{{ guild.icon_url }}">
+            <div class="name">{{ guild.name }}</div>
+            <a class="manage" href="/manage/{{ guild.id }}">Manage</a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
   </body>
 </html>
