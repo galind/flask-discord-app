@@ -2,7 +2,7 @@ import os
 
 from flask import Flask, redirect, url_for, render_template
 from flask_discord import (
-    DiscordOAuth2Session, Unauthorized, requires_authorization
+    DiscordOAuth2Session, Unauthorized, requires_authorization, models
 )
 
 from config import Config
@@ -23,8 +23,8 @@ def redirect_unauthorized(e):
 @app.route('/')
 @requires_authorization
 def home():
-    user = discord.fetch_user()
-    return render_template('index.html', user=user)
+    guilds = discord.fetch_guilds()
+    return render_template('index.html', guilds=guilds)
 
 
 @app.route('/login')
