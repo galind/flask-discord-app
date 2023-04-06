@@ -2,7 +2,7 @@ import os
 
 from flask import Flask, redirect, url_for, render_template
 from flask_discord import (
-    DiscordOAuth2Session, Unauthorized, requires_authorization, models
+    DiscordOAuth2Session, Unauthorized, requires_authorization
 )
 
 from config import Config
