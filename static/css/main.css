@@ -1,0 +1,40 @@
+body {
+  margin: 25px;
+  padding: 0;
+  color: #FFFFFF;
+  background-color: #515151;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));;
+}
+
+.item {
+  background-color: #121212;
+  padding: 20px 20px 20px 20px;
+  text-align: center;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: x-large;
+  margin: 10px;
+}
+
+.manage {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.manage:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
