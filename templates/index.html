@@ -4,5 +4,11 @@
     <meta charset="UTF-8">
     <title>Home - Bitacora</title>
   </head>
-  <body></body>
+  <body>
+    {% for guild in guilds %}
+      {% if guild.permissions.administrator == True %}
+        <div>{{ guild.name }}</div>
+      {% endif %}
+    {% endfor %}
+  </body>
 </html>
